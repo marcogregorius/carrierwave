@@ -13,7 +13,7 @@ dbconfig = {
   :database => 'carrierwave_test',
   :encoding => 'utf8',
   :username => 'postgres',
-  :password => 'postgres'
+  :password => 'postgres',
 }
 
 dbconfig[:host] = ENV['PG_HOST'] unless ENV['PG_HOST'].nil?
