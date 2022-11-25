@@ -12,7 +12,8 @@ dbconfig = {
   :adapter  => 'postgresql',
   :database => 'carrierwave_test',
   :encoding => 'utf8',
-  :username => 'postgres'
+  :username => 'postgres',
+  :password => 'postgres'
 }
 
 database = dbconfig.delete(:database)
