@@ -9,12 +9,12 @@ Bundler.require
 
 # Change this if PG is unavailable
 dbconfig = {
+  :host     => '127.0.0.1',
   :adapter  => 'postgresql',
   :database => 'carrierwave_test',
   :encoding => 'utf8',
   :username => 'postgres',
-  :password => 'postgres',
-  :host     => 'localhost'
+  :password => 'postgres'
 }
 
 database = dbconfig.delete(:database)
