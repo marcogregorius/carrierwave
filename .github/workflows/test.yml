@@ -60,10 +60,9 @@ jobs:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
       EXPERIMENTAL: ${{ matrix.experimental }}
       JRUBY_OPTS: --debug
-      # Ruby version > 2.3 needs host 127.0.0.1 for GitHub Action to find Postgres.
-      # Ruby version <= 2.3 will throw random error from C if host is provided.
-      PG_HOST: ${{ matrix.ruby > 2.3 && '127.0.0.1' || '127.0.0.1' }}  # workaround to ternary operator
-      PGGSSENCMODE: "disable"
+      # GitHub Actions need the application to specify host as 127.0.0.1 in order to find the Postgres.
+      # However, Ruby version <= 2.3 will throw segfaults / random errors from C if host is provided.
+      PG_HOST: ${{ matrix.ruby > 2.3 && '127.0.0.1' || null }}  # workaround to ternary operator
     steps:
       - uses: actions/checkout@v3
       - name: Setup ImageMagick policy
