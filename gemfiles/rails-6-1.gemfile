@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "rails", "~> 6.1.0"
 gem "activemodel-serializers-xml"
 
-gemspec
+gemspec :path => "../"
